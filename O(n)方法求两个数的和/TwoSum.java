@@ -15,16 +15,15 @@ public class TwoSum {
             if (hashMap.containsKey(target - nums[i])) {
                 result[0] = target - nums[i];
                 result[1] = nums[i];
-                break;
             }
-            hashMap.put(i, i);
+            hashMap.put(nums[i], i);
         }
         return result;
     }
 
     public static void main(String[] args) {
         int[] arra = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int[] result = new TwoSum().twoSum(arra, 105);
+        int[] result = new TwoSum().twoSum(arra, 15);
         for (int i = 0; i < result.length; i++) {
             System.out.println(result[i]);
         }
