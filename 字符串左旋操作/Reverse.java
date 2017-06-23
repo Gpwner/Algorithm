@@ -1,5 +1,6 @@
 /**
- * @author
+ * @author  dasperson
+ *           ersondasp
  * @version 2017/6/22.9:17
  * @project Java8Test
  */
@@ -9,13 +10,15 @@ public class Reverse {
 
 
     public static void main(String[] args) {
-        String string = "I am a good person";
+        String string = "dasperson";
         System.out.println(string);
-        System.out.println(leftRoate(2, string));
+        System.out.println(leftRoate(4, string));
     }
 
     public static String leftRoate(int n, String str) {
-        String s = reStr(reStr(str.substring(0, n - 1)) +" "+ reStr(str.substring(n, str.length())));
+        if (str==null||n > str.length())
+            System.exit(1);
+        String s = reStr(reStr(str.substring(0, n)) +reStr(str.substring(n, str.length())));
         return s;
     }
 
