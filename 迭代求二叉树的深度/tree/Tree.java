@@ -5,30 +5,29 @@ package tree;
  */
 public class Tree {
     public static void main(String[] args) {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
-        Node node7 = new Node(7);
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node7 = new TreeNode(7);
 
 
-        node1.setLeftChild(node2);
-        node1.setRightChild(node3);
-        node3.setRightChild(node6);
-        node2.setRightChild(node5);
-        node2.setLeftChild(node4);
-        node5.setLeftChild(node7);
-        System.out.println(new Tree().TreeDeep(node1));
+        node1.leftChild = node2;
+        node1.rightChild = node3;
+        node3.rightChild = node6;
+        node2.rightChild = node5;
+        node2.leftChild = node4;
+        node5.leftChild = node7;
+        System.out.println(new Tree().maxDepth(node1));
     }
 
-    public int TreeDeep(Node node) {
-        if (node == null) {
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
             return 0;
         }
-        int leftDeep = TreeDeep(node.getLeftChild());
-        int rightDeep = TreeDeep(node.getRightChild());
-        return leftDeep > rightDeep ? leftDeep + 1 : rightDeep + 1;
+        return Math.max(maxDepth(root.leftChild) + 1, maxDepth(root.rightChild) + 1);
     }
+
 }
