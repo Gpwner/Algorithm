@@ -1,5 +1,3 @@
-package com.gpwner;
-
 /**
  * Created by root on 2017/5/10.
  * 动态规划求最长的非递减序列的长度
